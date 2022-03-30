@@ -1,0 +1,13 @@
+:root {
+	font-family: var(--fds-font-family-text);
+	color: var(--fds-text-primary);
+	background: var(--fds-solid-background-base);
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	grid-template-rows: min-content 1fr;
+	block-size: 100vh;
+	margin: 0;
+}
