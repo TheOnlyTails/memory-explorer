@@ -1,16 +1,13 @@
 <script lang="ts">
-  import { onMount } from "svelte"
   import { objects } from "$lib/data"
-  import { Object } from "$lib"
+  import { Object as ObjectTable } from "$lib"
 
-  onMount(() => {
-    // panzoom(document.body, { minZoom: 0.5, maxZoom: 10, bounds: true })
-  })
+  $: console.log([...$objects.entries()])
 </script>
 
 <main class="explorer">
-  {#each [...$objects] as { name, fields } (name)}
-    <Object {name} {fields} />
+  {#each [...$objects.entries()] as [name, fields] (name)}
+    <ObjectTable {name} {fields} />
   {/each}
 </main>
 
